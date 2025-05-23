@@ -1,0 +1,43 @@
+---
+import Navigation from './Navigation.astro';
+import Hamburger from './Hamburger.astro';
+import logoImage from "../assets/images/logoLong2024.jpg"; // Image is 1600x900
+import { Image } from 'astro:assets';
+---
+
+<style>
+  header{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 91px;
+  }
+
+  #logoImageContainer{
+    display: flex;
+    align-items: center;  
+    justify-content: center;
+    border-radius: 8px;
+    border-left: 2px solid black;
+    width: 21%;
+    max-width: 310px;
+    height: 82px;
+    text-align: center;
+  }
+
+  #logoImageContainer img{
+    max-width: 90%;
+    height: auto;
+  }
+
+</style>
+
+<header class="blackBackground">
+    <a id="logoImageContainer" class="yellowBackground" href="/">
+      <div id="" >
+          <Image src={logoImage} alt="Lockhouse Escape Games Logo" />
+      </div>
+    </a>
+    <Hamburger />
+    <Navigation />
+</header>

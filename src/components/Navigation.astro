@@ -1,0 +1,129 @@
+---
+// import NavDropdown from '../components/Navigation/NavDropdown.astro';
+---
+<style>
+
+    #navMenu{
+        display: flex;
+        justify-content: center;
+        width: 79%;
+        background: black;
+    }    
+
+    #navMenu #navLinksContainer{
+        display: flex;
+        justify-content: space-evenly;
+        column-gap: 36px;
+    }
+
+    #navMenu h2, #navMenu a{
+        font-size: 18px;
+        font-family: 'Cabin';
+        font-weight: 400;
+        text-transform: uppercase;
+        color: white;
+        text-decoration: none;
+        margin: 0;
+    }
+
+    #navMenu h2{
+        cursor: pointer;
+    }
+
+    #navMenu h2::after{
+        font-family: 'Icons';
+        content: "3";
+        font-size: 16px;
+        font-weight: 800;
+        transition: transform 0.5s;
+        display:inline-block;
+        margin-left: 2px;
+        position: relative;
+        top: 2px;
+    }
+
+    #navMenu ul{
+        display: none;
+        padding: 0;
+        margin: 0;
+        width:190px;
+        position: absolute;
+        background: black;
+        list-style-type: none;
+        transform: translate(-16px, 38px);
+        border-radius: 10px;
+        border-top: solid #FFBA06 2px;
+        border-bottom: solid #FFBA06 2px;
+    }
+    #navMenu .navDropdown.hoveredDropdown ul{
+        display: unset;
+    }
+    #navMenu .dropdownSpacer{
+        padding-bottom: 5px;
+        position: absolute;
+        transform: translate(-16px, 33px);
+        width: 190px;
+    }
+    #navMenu ul a{
+        font-size: 16px;
+        padding: 6px 16px 6px 16px;
+        display: block;
+    }
+    #navMenu .navDropdown.hoveredDropdown h2, #navMenu a:hover{
+        color:#FFBA06;
+    }
+    #navMenu .navDropdown.hoveredDropdown h2::after{
+        transform: rotate(180deg);
+    }
+
+    @media only screen and (max-width: 1364px) {
+
+        #navMenu h2, #navMenu a{
+            font-size: 15px;
+        }
+
+        #navMenu #navLinksContainer{
+            column-gap: 20px;
+        }
+        
+    }
+
+</style>
+
+<nav id="navMenu">
+
+    <div id="navLinksContainer">
+
+        <div class="navDropdown">
+            <h2>Escape Rooms</h2>
+            <div class="dropdownSpacer"></div>
+            <ul>
+                <li><a href="/escape-rooms/">All Escape Rooms</a></li>
+                <li><a href="/mayan-temple/">Mayan Temple</a></li>
+                <li><a href="/egyptian-tomb/">Egyptian Tomb</a></li>
+                <li><a href="/armageddon/">Armageddon</a></li>
+                <li><a href="/secret-agent/">Secret Agent</a></li>
+            </ul>
+        </div>
+
+        <a href="/faq/">FAQ</a>
+        <a href="/corporate/">Corporate</a>
+        <a href="/students/">Students</a>
+        <a href="/gift-vouchers/">Gift Vouchers</a>
+
+        <div class="navDropdown">
+            <h2>About Us</h2>
+            <div class="dropdownSpacer"></div>
+            <ul>
+                <li><a href="/meet-the-team/">Meet The Team</a></li>
+                <li><a href="/contact-us/">Contact Us</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<script>
+    import '../scripts/desktopNav';
+</script>
+
