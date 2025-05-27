@@ -17,10 +17,10 @@ import { Image } from 'astro:assets';
     display: flex;
     align-items: center;  
     justify-content: center;
-    border-radius: 8px;
-    border-left: 2px solid black;
-    width: 21%;
-    max-width: 310px;
+    border-radius: 0px 8px 8px 8px;
+    margin-left: 4.5px;
+    width: 30%;
+    max-width: 330px;
     height: 82px;
     text-align: center;
   }
@@ -30,11 +30,28 @@ import { Image } from 'astro:assets';
     height: auto;
   }
 
+  @media only screen and (max-width: 1023px) {   
+
+    header{
+      flex-wrap: wrap;
+    }
+
+    #logoImageContainer{
+      width: calc(85% - 5px);
+      max-width: unset;
+    }
+
+    #logoImageContainer img{
+      max-width: min(350px, 95%);
+    }
+
+  }
+
 </style>
 
 <header class="blackBackground">
     <a id="logoImageContainer" class="yellowBackground" href="/">
-      <div id="" >
+      <div class="centeredContainer" >
           <Image src={logoImage} alt="Lockhouse Escape Games Logo" />
       </div>
     </a>

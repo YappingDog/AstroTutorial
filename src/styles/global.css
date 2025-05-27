@@ -44,3 +44,9 @@ body{
 .mainBodyFont{
   font-family: 'cabin-condensed';
 }
+
+.centeredContainer{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

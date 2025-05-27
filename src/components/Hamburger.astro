@@ -1,5 +1,33 @@
 ---
 ---
+
+<style>
+
+/* nav styles */
+.hamburger {
+    width: 15%;
+    cursor: pointer;
+}
+
+.hamburger .line {
+    display: block;
+    width: 40px;
+    max-width: 70%;
+    height: 5px;
+    margin: 5px auto;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+
+    .hamburger {
+        display: none;
+    }
+}
+
+</style>
+
 <div class="hamburger">
     <span class="line"></span>
     <span class="line"></span>
