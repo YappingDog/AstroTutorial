@@ -1,8 +1,8 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css';
-const { pageTitle } = Astro.props;
+import Header from '../components/Navigation/Header.astro';
+import Footer from '../components/Navigation/Footer.astro';
+const { pageTitle, canonical } = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -10,7 +10,25 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical}>
     <title>{pageTitle}</title>
+
+    <link
+    as="font"
+    crossorigin
+    href="../fonts/cabin.woff2"
+    rel="preload"
+    type="font/woff2"
+    />    
+
+    <link
+    as="font"
+    crossorigin
+    href="../fonts/icons.ttf"
+    rel="preload"
+    type="font/ttf"
+    />    
+
   </head>
   <body>
     <Header />
