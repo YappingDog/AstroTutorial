@@ -1,0 +1,144 @@
+---
+import Social from './Social.astro';
+import facebookIcon from "../../assets/images/facebook.svg";
+import instaIcon from "../../assets/images/insta.svg";
+import tiktokIcon from "../../assets/images/tiktok.svg";
+import { Image } from 'astro:assets';
+---
+
+<style>
+    footer {
+      background: black;
+      padding: 60px;
+      padding-bottom: 0px;
+
+      font-family: 'Cabin';
+    }
+
+    footer a, footer p, footer h5, footer li{
+      color: white;
+      margin: 0;
+      font-size: 17px;
+    }
+
+    footer a{
+      text-decoration: none;
+    }
+
+    footer ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    footer ul li{
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+    }
+
+    footer h5{
+      font-weight: bold;
+    }
+
+    footer #footerContainer{
+      display: flex;
+      margin: auto;
+      justify-content: left;
+      max-width: 800px;
+      flex-wrap: wrap;
+
+      text-transform: uppercase;
+    }
+
+    footer #footerContainer div{
+      width: 33%;
+    }
+
+    footer #footerContact span{
+      padding-right: 15px;
+      font-size: 15px;
+    }
+
+    footer #footerSocials ul{
+      display: flex;
+    }
+
+    footer #footerSocials li img{
+      width: auto;
+      height: 25px;
+      margin-right: 12px;
+      filter: invert(1);
+    }
+
+    footer #footerSocials li .fbIcon img{
+      margin-right: 7px;
+      height: 23px;
+    }
+
+    footer #footerSocials li .tiktokIcon img{
+      height: 24px;
+    }
+
+    footer #footerCopyright{
+      margin-top: 80px;
+      text-align: center;
+      padding-bottom: 26px;
+    }
+
+    @media only screen and (max-width: 800px) {
+
+      footer #footerContainer{
+        flex-direction: column;
+        align-content: center;
+        text-align: center;
+      }
+
+      footer #footerContainer div{
+        margin-top: 25px;
+        width: 100%;
+      }
+
+      footer #footerSocials ul{
+        justify-content: center;
+      }
+
+    }
+
+  </style>
+
+<footer class="mainBodyFont">
+
+  <div id="footerContainer">
+
+    <div id="footerSocials">
+      <h5>Follow us</h5>
+      <ul>
+        <li><a href="https://www.facebook.com/lockhouseescapegames" class="fbIcon"><Image src={facebookIcon} alt="Facebook link"/></a></li>
+        <li><a href="https://www.instagram.com/lockhousegames" class="instaIcon"><Image src={instaIcon} alt="Instagram link"/></a></li>
+        <li><a href="https://www.tiktok.com/@lockhouseescapegames" class="tiktokIcon"><Image src={tiktokIcon} alt="TikTok link"/></a></li>
+        
+      </ul>
+    </div>
+
+    <div id="footerLinks">
+      <h5>More information</h5>
+      <ul>
+        <li><a href="/terms-conditions">Terms & Conditions</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div id="footerContact">
+      <h5>Get in touch</h5>
+      <ul>
+        <li><a href="mailto:admin@lockhouse.co.uk"><span class="emailIcon"></span>admin<span style="padding:0; font-size: 16px; font-family:monospace;">@</span>lockhouse.co.uk</a></li>
+        <li><a href="tel:01223321216"><span class="phoneIcon"></span>01223 321216</a></li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <p id="footerCopyright" class="fullWidth">Lockhouse Escape Games © All rights reserved </p>
+</footer>

@@ -1,7 +1,16 @@
 /* Register your custom font family and tell the browser where to find it. */
+
 @font-face {
   font-family: 'Cabin';
   src: url('/fonts/cabin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cabin Condensed';
+  src: url('/fonts/cabin-condensed.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -15,9 +24,25 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 body{
   margin: 0;
+  font-family: 'Montserrat';
 }
 
 
@@ -42,11 +67,47 @@ body{
 }
 
 .mainBodyFont{
-  font-family: 'cabin-condensed';
+  font-family: 'Montserrat';
+  font-weight: 400;
 }
 
 .centeredContainer{
   display: flex;
   justify-content: center;
   align-content: center;
+}
+
+.fullWidth{
+  width: 100%;
+}
+
+
+.phoneIcon:before{
+  font-family: "Icons";
+  content: '\e090';
+}
+
+.emailIcon:before{
+  font-family: "Icons";
+  content: '\e076';
+}
+
+.starEmptyIcon:before{
+  font-family: "Icons";
+  content: '\e031';  
+}
+
+.starHalfIcon:before{
+  font-family: "Icons";
+  content: '\e034';  
+}
+
+.starHalfAltIcon:before{
+  font-family: "Icons";
+  content: '\e032';  
+}
+
+.starFullIcon:before{
+  font-family: "Icons";
+  content: '\e033';  
 }

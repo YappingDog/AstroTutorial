@@ -1,13 +1,13 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Navigation/Header.astro';
-import Footer from '../components/Navigation/Footer.astro';
+import Footer from '../components/Navigation/Footer2.astro';
 const { pageTitle, canonical } = Astro.props;
 ---
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="canonical" href={canonical}>
@@ -29,11 +29,12 @@ const { pageTitle, canonical } = Astro.props;
     type="font/ttf"
     />    
 
+    <slot name="aboveFoldStyles" />
+
   </head>
   <body>
     <Header />
-    <h1>{pageTitle}</h1>
-    <slot />
+    <slot  />
     <Footer />
     <script>
       import "../scripts/menu.js";

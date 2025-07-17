@@ -2,8 +2,81 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home Page";
 const canonical = "https://lockhouse.co.uk";
+
+import SplashImage from '../components/SplashImage.astro';
+const startingImage = "url(/images/armageddonBackground.jpg)";
 ---
+
 <BaseLayout pageTitle={pageTitle} canonical={canonical}>
 
+    <style slot="aboveFoldStyles">
+        
+        #splashImageTextContainer{
+
+            background: RGBA(0,0,0,0.9);
+            padding: 20px;
+            border-radius: 10px;
+            width: 40%;
+            max-width: 1000px;
+            color: white;
+            margin-left: 60px;
+
+        }
+
+        #splashImageTextContainer h1{
+            font-size: 67px;
+            margin: 0;
+        }
+
+        #splashImageTextContainer h1 span{
+            color: #FFBA06;
+        }
+
+        #splashImageTextContainer p{
+            font-size: 18px;
+        }
+
+        @media only screen and (max-width: 1700px){
+            #splashImageTextContainer h1{
+                font-size: 40px;
+            }
+        }
+
+        @media only screen and (max-width: 600px){
+
+            #splashImageTextContainer{
+                padding: 20px;
+                height: fit-content;
+                width: auto;
+                max-width: calc(100% - 40px);
+                margin: 0;
+
+                background: RGBA(0, 0, 0, 0.7);
+            }
+
+            #splashImageTextContainer h1{
+                font-size: 30px;
+            }
+
+            #splashImageTextContainer p{
+                font-size: 16px;
+            }
+        }
+
+
+
+    </style>
+
+    <SplashImage startingImage = {startingImage}>
+
+        <div id="splashImageTextContainer">
+            <h1>Experience the most thrilling hour <span>in Cambridge.</span></h1>
+            <p>Our escape rooms are super immersive live action adventure games. You'll come as a group but leave as a team as you race to solve puzzles, overcome challenges and escape before your time runs out.</p>
+        </div>
+
+    </SplashImage>
+
 </BaseLayout>
+
+
 

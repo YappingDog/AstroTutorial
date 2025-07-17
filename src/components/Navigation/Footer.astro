@@ -1,17 +1,113 @@
 ---
 import Social from './Social.astro';
+import facebookIcon from "../../assets/images/facebook.svg";
+import instaIcon from "../../assets/images/insta.svg";
+import { Image } from 'astro:assets';
 ---
 
 <style>
     footer {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
+      background: black;
+      font-family: 'Cabin';
+      padding: 60px;
     }
+
+    footer a, footer p, footer h5{
+      color: white;
+      margin: 0;
+      font-size: 16px;
+    }
+
+    footer a{
+      text-decoration: none;
+    }
+
+    footer ul{
+      padding: 0;
+      margin: 0;
+    }
+
+    footer h5{
+      font-weight: bold;
+    }
+
+    footer #footerContainer{
+      display: flex;
+      margin: auto;
+      justify-content: left;
+      max-width: 800px;
+      flex-wrap: wrap;
+      gap: 50px;	
+    }
+
+    footer #footerContainer div{
+      width: fit-content;
+    }
+
+    footer #footerContact span{
+      font-weight: bold;
+    }
+
+    footer #footerSocials{
+      font-family: "Icons";
+    }
+
+    footer #footerSocials{
+      display: flex;
+    }
+
+    footer #footerSocials li img{
+      width: auto;
+      height: 30px;
+      filter: invert(1);
+    }
+
+    /* footer #footerSocials .fbIcon:before{
+      content: '\e093';
+    }
+
+    footer #footerSocials .instaIcon:before{
+      content: '\9a';
+    } */
+
   </style>
 
 <footer>
-    <Social platform="twitter" username="astrodotbuild" />
-    <Social platform="github" username="withastro" />
-    <Social platform="youtube" username="astrodotbuild" />
+
+
+  <div id="footerContainer">
+
+    <p id="footerCopyright" class="fullWidth">© 2025 Lockhouse Escape Games. All rights reserved | <a href="/terms-conditions">Terms & Conditions</a> | <a href="/privacy-policy">Privacy Policy</a></p>
+
+    <div id="footerLinks">
+      <p>Our Escape Rooms</p>
+      <ul>
+        <li><a href="/mayan-temple">Mayan Temple</a></li>
+        <li><a href="/egyptian-tomb">Egyptian Tomb</a></li>
+        <li><a href="/armageddon">Armageddon</a></li>
+        <li><a href="/secret-agent">Secret Agent</a></li>
+      </ul>
+    </div>
+
+    <div id="footerAddress">
+      <p>Lockhouse Escape Games</p>
+      <p>70 Regent Street</p>
+      <p>Cambridge</p>
+      <p>CB2 1DP</p>
+    </div>
+
+    <div id="footerContact">
+      <p><span>Email: </span>admin@lockhouse.co.uk</p>
+      <p><span>Phone: </span>01223 321216</p>
+      <p><span>WhatsApp: </span>+44 ???? ??????</p>
+
+      <ul id="footerSocials">
+        <li><a href="https://www.facebook.com/lockhouseescapegames" class="fbIcon"><Image src={facebookIcon} alt="Facebook link"/></a></li>
+        <li><a href="https://www.facebook.com/lockhouseescapegames" class="instaIcon"><Image src={instaIcon} alt="Instagram link"/></a></li>
+
+        
+      </ul>
+    </div>
+
+  </div>
 </footer>

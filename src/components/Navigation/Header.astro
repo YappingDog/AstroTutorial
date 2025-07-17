@@ -7,10 +7,17 @@ import { Image } from 'astro:assets';
 
 <style>
   header{
+    position: fixed;
+    width: 100%;
+    top: 0;
     display: flex;
     align-items: center;
     margin: 0;
     height: 91px;
+  }
+
+  #headerSpacer{
+    padding-bottom: 91px;
   }
 
   #logoImageContainer{
@@ -34,6 +41,7 @@ import { Image } from 'astro:assets';
 
     header{
       flex-wrap: wrap;
+      border-bottom: 1px solid black;
     }
 
     #logoImageContainer{
@@ -58,3 +66,5 @@ import { Image } from 'astro:assets';
     <Hamburger />
     <Navigation />
 </header>
+
+<div id ="headerSpacer"></div>

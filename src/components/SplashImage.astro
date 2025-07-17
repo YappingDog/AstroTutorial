@@ -1,0 +1,42 @@
+---
+//91px is height of nav menu, update default height if nav menu changes or will be hidden where image is to be shown
+const { height = "calc(100vh - 91px)", transitionTime = 8000, startingImage } = Astro.props;
+---
+
+<div class="splashImageContainer">
+
+	<!-- Define images and text to use within a script tag in below slot, also add overlay elements -->
+	<slot /> 
+	
+</div>
+
+<style define:vars={{height, startingImage}}>
+
+	.splashImageContainer{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		user-select: none;
+		background-position-x: 50%;
+		background-position-y: 50%;
+		background-size: cover;
+
+		height: var(--height);
+		background-image: var(--startingImage);
+	}
+
+	@media only screen and (max-width: 600px){
+
+		.splashImageContainer{
+			justify-content: center;
+			background-position-y: 50%;
+			background-size: cover;
+
+			max-height: 100vw;
+			min-height: fit-content;
+		}		
+
+	}
+
+</style>
+
