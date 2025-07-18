@@ -5,11 +5,14 @@ const canonical = "https://lockhouse.co.uk";
 
 import SplashImage from '../components/SplashImage.astro';
 const startingImage = "url(/images/armageddonBackground.jpg)";
+import mobileImage from "../assets/images/search.png";
+
+import { Image } from 'astro:assets';
 ---
 
 <BaseLayout pageTitle={pageTitle} canonical={canonical}>
 
-    <style slot="aboveFoldStyles">
+    <style slot="aboveFoldStyles" define:vars={{startingImage}}>
         
         #splashImageTextContainer{
 
@@ -44,14 +47,29 @@ const startingImage = "url(/images/armageddonBackground.jpg)";
 
         @media only screen and (max-width: 600px){
 
+            #spashImageContainer{
+                background: black;
+                justify-content: space-between;
+            }
+
             #splashImageTextContainer{
                 padding: 20px;
-                height: fit-content;
+                height: calc(100vh - 91px);
                 width: auto;
                 max-width: calc(100% - 40px);
                 margin: 0;
+                background: RGBA(0, 0, 0, 1);
 
-                background: RGBA(0, 0, 0, 0.7);
+                justify-content: space-between;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #splashImageMobileContainer{
+                height: calc(100vh - 350px);
+                width: auto;
+                background: var(--startingImage);
             }
 
             #splashImageTextContainer h1{
@@ -60,6 +78,12 @@ const startingImage = "url(/images/armageddonBackground.jpg)";
 
             #splashImageTextContainer p{
                 font-size: 16px;
+            }
+
+            #splashImageTextContainer img.mobileOnly{
+                width: calc(100vh * 0.5 - 130px);
+                max-width: 300px;
+                height: auto;
             }
         }
 
@@ -71,6 +95,7 @@ const startingImage = "url(/images/armageddonBackground.jpg)";
 
         <div id="splashImageTextContainer">
             <h1>Experience the most thrilling hour <span>in Cambridge.</span></h1>
+            <Image class="mobileOnly" src={mobileImage} alt="Search, Think, Solve, Escape!"/>
             <p>Our escape rooms are super immersive live action adventure games. You'll come as a group but leave as a team as you race to solve puzzles, overcome challenges and escape before your time runs out.</p>
         </div>
 
