@@ -95,7 +95,7 @@ import { Image } from 'astro:assets';
 
         <div id="splashImageTextContainer">
             <h1>Experience the most thrilling hour <span>in Cambridge.</span></h1>
-            <Image class="mobileOnly" src={mobileImage} alt="Search, Think, Solve, Escape!"/>
+            {false && <Image class="mobileOnly" src={mobileImage} alt="Search, Think, Solve, Escape!"/>}
             <p>Our escape rooms are super immersive live action adventure games. You'll come as a group but leave as a team as you race to solve puzzles, overcome challenges and escape before your time runs out.</p>
         </div>
 
